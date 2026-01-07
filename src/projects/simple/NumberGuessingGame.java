@@ -20,7 +20,7 @@ class NumberGuessingGame {
         int maxRange = result[1];
         System.out.print("Enter any number between 1 and " + maxRange + ": ");
         while (true) {
-            int userGuess = Integer.parseInt(scanner.nextLine());
+            int userGuess = takeAndValidateGuess(maxRange);
             numberOfAttempts++;
             if (computerGuess == userGuess) {
                 System.out.println("you guessed it right in " + numberOfAttempts + " attempts");
@@ -81,6 +81,26 @@ class NumberGuessingGame {
             }
             System.out.println("Enter valid difficulty level (1, 2, or 3): ");
         }
+    }
+
+    public static int takeAndValidateGuess(int max) {
+        while (true) {
+            String userGuess = scanner.nextLine();
+            try {
+                int guess = Integer.parseInt(userGuess);
+                if (outOfRangeGuess(guess, max)) {
+                    System.out.println("Out of range! Enter between 1 and " + max);
+                } else {
+                    return guess;
+                }
+            } catch (NumberFormatException e) {
+                System.out.print("Invalid input! Please enter a number: ");
+            }
+        }
+    }
+
+    public static boolean outOfRangeGuess(int userGuess, int max) {
+        return userGuess < 1 || userGuess > max;
     }
 
 }
