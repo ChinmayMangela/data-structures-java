@@ -6,6 +6,7 @@ class Calculator {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Map<Integer, BinaryOperation> binaryOperationMap = new HashMap<>();
     private static final Map<Integer, UnaryOperation> unaryOperationMap = new HashMap<>();
+    private static final Map<Integer, TrigonometricOperation> trigonometricOperationMap = new HashMap<>();
 
     static {
         binaryOperationMap.put(1, new Addition());
@@ -15,6 +16,9 @@ class Calculator {
         binaryOperationMap.put(5, new Modulus());
         binaryOperationMap.put(6, new Power());
         unaryOperationMap.put(7, new SquareRoot());
+        trigonometricOperationMap.put(1, new Sine());
+        trigonometricOperationMap.put(2, new Cosine());
+        trigonometricOperationMap.put(3, new Tangent());
     }
 
     public static void main(String[] args) {
@@ -93,17 +97,17 @@ class Calculator {
             double angle = takeAndValidateUserInput("Enter angle in degrees: ");
             double normalized = ((angle % 360) + 360) % 360;
             if (trigChoice == 1) {
-                double result = Math.sin(Math.toRadians(angle));
-                println("Result: sin(" + angle + "°) = " + result);
+                double result = trigonometricOperationMap.get(1).calculate(angle);
+                println(trigonometricOperationMap.get(1).showResult(angle, result));
             } else if (trigChoice == 2) {
-                double result = Math.cos(Math.toRadians(angle));
-                println("Result: cos(" + angle + "°) = " + result);
+                double result = trigonometricOperationMap.get(2).calculate(angle);
+                println(trigonometricOperationMap.get(2).showResult(angle, result));
             } else if (trigChoice == 3) {
                 if (normalized == 90 || normalized == 270) {
                     println("Error: tan(" + angle + "°) is undefined!");
                 } else {
-                    double result = Math.tan(Math.toRadians(angle));
-                    println("Result: tan(" + angle + "°) = " + result);
+                    double result = trigonometricOperationMap.get(3).calculate(angle);
+                    println(trigonometricOperationMap.get(3).showResult(angle, result));
                 }
             }
             println("");
