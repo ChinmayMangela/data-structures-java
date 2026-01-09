@@ -36,7 +36,7 @@ class Calculator {
             println("5. Modulus");
             println("6. Power");
             println("7. Square Root");
-            println("8. Trigonometric  functions");
+            println("8. Trigonometric functions");
             println("9. Memory Options");
             println("10. Exit");
 
@@ -56,6 +56,8 @@ class Calculator {
                 double number = takeAndValidateUserInput("Enter a number: ");
                 double result = unaryOperationMap.get(choice).calculate(number);
                 println(unaryOperationMap.get(choice).showResultMessage(number, result));
+            } else if(choice == 8) {
+                handleTrigonometricFunctions();
             } else {
                 double firstNumber = takeAndValidateUserInput("Enter first number: ");
                 double secondNumber = takeAndValidateUserInput("Enter second number: ");
@@ -75,6 +77,40 @@ class Calculator {
         println("Welcome to Advanced Calculator");
     }
 
+    private static void handleTrigonometricFunctions() {
+        while(true) {
+            println("Choose a trigonometric function");
+            println("1. Sine (sin)");
+            println("2. Cosine (cos)");
+            println("3. Tangent (tan)");
+            println("4. Exit to main menu");
+            int trigChoice = takeAndValidateTrigonometricFunction();
+
+            if (trigChoice == 4) {
+                println("Returning to main menu...");
+                break;
+            }
+            double angle = takeAndValidateUserInput("Enter angle in degrees: ");
+            double normalized = ((angle % 360) + 360) % 360;
+            if (trigChoice == 1) {
+                double result = Math.sin(Math.toRadians(angle));
+                println("Result: sin(" + angle + "°) = " + result);
+            } else if (trigChoice == 2) {
+                double result = Math.cos(Math.toRadians(angle));
+                println("Result: cos(" + angle + "°) = " + result);
+            } else if (trigChoice == 3) {
+                if (normalized == 90 || normalized == 270) {
+                    println("Error: tan(" + angle + "°) is undefined!");
+                } else {
+                    double result = Math.tan(Math.toRadians(angle));
+                    println("Result: tan(" + angle + "°) = " + result);
+                }
+            }
+            println("");
+        }
+
+    }
+
     private static double takeAndValidateUserInput(String message) {
         print(message);
         while (true) {
@@ -85,6 +121,28 @@ class Calculator {
                 print("Enter a valid number: ");
             }
         }
+    }
+
+
+    private static int takeAndValidateTrigonometricFunction() {
+        print("Select the function: ");
+        while (true) {
+            String inputOperation = scanner.nextLine();
+            try {
+                int input = Integer.parseInt(inputOperation);
+                if (isInvalidTrigonometricOperation(input)) {
+                    print("Out of range! select an option between 1 - 4: ");
+                } else {
+                    return input;
+                }
+            } catch (NumberFormatException e) {
+                print("Invalid option! Please enter a number: ");
+            }
+        }
+    }
+
+    private static boolean isInvalidTrigonometricOperation(int inputOperation) {
+        return inputOperation < 1 || inputOperation > 4;
     }
 
 
