@@ -3,13 +3,12 @@ package projects.simple;
 import java.util.*;
 
 class NumberGuessingGame {
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        while (true) {
+        do {
             playGame();
-            if (!askForReplay()) break;
-        }
+        } while (askForReplay());
     }
 
     public static void playGame() {
