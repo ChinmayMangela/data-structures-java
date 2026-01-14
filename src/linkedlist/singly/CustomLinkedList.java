@@ -196,7 +196,7 @@ public class CustomLinkedList {
     }
 
     private static class Node {
-        private int value;
+        private final int value;
         private Node next;
 
         Node(int value) {
