@@ -211,10 +211,10 @@ public class Patterns {
 
     public static void patternThirteen(int n) {
         /*
-             *
-            * *
-           *   *
-          *     *
+         *
+         * *
+         *   *
+         *     *
          *********
          */
         for (int i = 0; i < n; i++) {
@@ -239,9 +239,83 @@ public class Patterns {
     }
 
 
+    public static void patternFourteen(int n) {
+        /*
+         *********
+          *     *
+           *   *
+            * *
+             *
+         */
+        for (int i = 0; i < n; i++) {
+            // for outer space
+            for (int j = 0; j <= i; j++) {
+                System.out.print(" ");
+            }
+            // for first and last line because they don't have any inner space
+            if (i == 0) {
+                for (int star = 0; star < (2 * n - 1); star++) {
+                    System.out.print("*");
+                }
+            } else if (i == n - 1) {
+                System.out.print("*");
+            } else { // this is for inner part which contains inner space from 1 to n - 2
+                System.out.print("*");
+                int innerSpaceCount = (2 * n) - (2 * i) - 3;
+                for (int innerSpace = 0; innerSpace < innerSpaceCount; innerSpace++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void pattern(int n) {
+        for (int i = 0; i < 2 * n - 1; i++) {
+            int numberOfStarsInEachRow = i > n - 1 ? i + 2 - n : n - i;
+            for (int star = 0; star < numberOfStarsInEachRow; star++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternFifteen(int n) {
+        /*
+              *
+             * *
+            *   *
+           *     *
+          *       *
+           *     *
+            *   *
+             * *
+              *
+         */
+        for(int i = 0; i < 2 * n - 1; i++) {
+            int numberOfOuterSpace = i > n - 1 ?  i + 2 - n : n - i;
+            for(int space = 0; space < numberOfOuterSpace; space++) {
+                System.out.print(" ");
+            }
+
+            if(i == 0 || i == 2 * n - 2) {
+                System.out.print("*");
+            } else {
+                System.out.print("*");
+                int numberOfInnerSpace = i > n - 1 ? 2 * (2 * n - 2 - i) - 1 : i * 2 - 1;
+                for(int space = 0; space < numberOfInnerSpace; space++) {
+                    System.out.print(" ");
+                }
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
-        patternThirteen(5);
+        patternFifteen(5);
     }
 
 
