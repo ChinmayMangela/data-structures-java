@@ -416,9 +416,107 @@ public class Patterns {
         }
     }
 
+    public static void firstHalfOfEighteenPattern(int n) {
+        /*
+         **********
+         ****  ****
+         ***    ***
+         **      **
+         *        *
+         */
+        for(int i = 0; i < n; i++) {
+            // Left stars
+            for(int star = 0; star < n - i; star++) System.out.print("*");
+
+            // Middle space
+            for(int space = 0; space < 2 * i; space++) System.out.print(" ");
+
+            // Right stars
+            for(int star = 0; star < n - i; star++) System.out.print("*");
+            System.out.println();
+        }
+    }
+
+    public static void secondHalfOfEighteenPattern(int n) {
+        /*
+         *        *
+         **      **
+         ***    ***
+         ****  ****
+         **********
+         */
+        for(int i = 0; i < n; i++) {
+            // Left stars
+            for(int star = 0; star <= i; star++) System.out.print("*");
+
+            // Middle space
+            for(int space = 0; space < (2 * n) - (i * 2 + 2); space++) System.out.print(" ");
+
+            // Right stars
+            for(int star = 0; star <= i; star++) System.out.print("*");
+            System.out.println();
+        }
+    }
+
+    public static void patternEighteen(int n) {
+        /*
+         **********
+         ****  ****
+         ***    ***
+         **      **
+         *        *
+         *        *
+         **      **
+         ***    ***
+         ****  ****
+         **********
+         */
+
+        for(int i = 0; i < 2 * n; i++) {
+            int starCountInEachRow = i < n ? (n - i) : (i - n) + 1;
+            // Left stars
+            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            int spaceCountInEachRow = (2 * n) - (starCountInEachRow * 2);
+
+            // Middle space
+            for(int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
+
+            // Right stars
+            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            System.out.println();
+        }
+    }
+
+    public static void patternNineteen(int n) {
+        /*
+         *        *
+         **      **
+         ***    ***
+         ****  ****
+         **********
+         ****  ****
+         ***    ***
+         **      **
+         *        *
+         */
+        for(int i = 0; i < 2 * n - 1; i++) {
+            int starCountInEachRow = i < n ? (i + 1) : (2 * n - i - 1);
+            // Left stars
+            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            int spaceCountInEachRow = (2 * n) - (starCountInEachRow * 2);
+
+            // Middle space
+            for(int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
+
+            // Right stars
+            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
-        patternSeventeen(5);
+        patternNineteen(5);
     }
 
 
