@@ -514,9 +514,76 @@ public class Patterns {
         }
     }
 
+    public static void patternTwenty(int n) {
+        /*
+         ****
+         *  *
+         *  *
+         *  *
+         ****
+         */
+        for(int i = 1; i < 2 * n; i++) {
+            if(i > 1 && i < 2 * n - 1) {
+                if (i % 2 != 0) {
+                    System.out.print("*");
+                    for(int space = 0; space < n - 3; space++) {
+                        System.out.print(" ");
+                    }
+                    System.out.print("*");
+                } else {
+                    continue;
+                }
+            } else {
+                for(int stars = 0; stars < n - 1; stars++) {
+                    System.out.print("*");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
+    public static void patternTwentyOne(int n) {
+        /*
+        1
+        2  3
+        4  5  6
+        7  8  9  10
+        11 12 13 14 15
+         */
+        int number = 1;
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print(number + " ");
+                number++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternTwentyTwo(int n) {
+        /*
+        1
+        0 1
+        1 0 1
+        0 1 0 1
+        1 0 1 0 1
+         */
+        for(int i = 1; i <= n; i++) {
+            int number = i % 2;
+            for(int j = 1; j <= i; j++) {
+                System.out.print(number + " ");
+                number = 1 - number;
+            }
+            System.out.println();
+        }
+    }
+
+
+
 
     public static void main(String[] args) {
-        patternNineteen(5);
+        patternTwentyTwo(5);
     }
 
 
