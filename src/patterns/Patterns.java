@@ -353,9 +353,9 @@ public class Patterns {
             int breakPoint = numberCountForEachRow / 2;
             int number = i + 1;
 
-            for(int j = 0; j < numberCountForEachRow; j++) {
+            for (int j = 0; j < numberCountForEachRow; j++) {
                 System.out.print(number);
-                if(j < breakPoint)
+                if (j < breakPoint)
                     number--;
                 else
                     number++;
@@ -409,7 +409,7 @@ public class Patterns {
 
             for (int j = 0; j < numberOfNumberInEachLine; j++) {
                 System.out.print(number);
-                if(j < breakPoint) number--;
+                if (j < breakPoint) number--;
                 else number++;
             }
             System.out.println();
@@ -424,15 +424,15 @@ public class Patterns {
          **      **
          *        *
          */
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             // Left stars
-            for(int star = 0; star < n - i; star++) System.out.print("*");
+            for (int star = 0; star < n - i; star++) System.out.print("*");
 
             // Middle space
-            for(int space = 0; space < 2 * i; space++) System.out.print(" ");
+            for (int space = 0; space < 2 * i; space++) System.out.print(" ");
 
             // Right stars
-            for(int star = 0; star < n - i; star++) System.out.print("*");
+            for (int star = 0; star < n - i; star++) System.out.print("*");
             System.out.println();
         }
     }
@@ -445,15 +445,15 @@ public class Patterns {
          ****  ****
          **********
          */
-        for(int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             // Left stars
-            for(int star = 0; star <= i; star++) System.out.print("*");
+            for (int star = 0; star <= i; star++) System.out.print("*");
 
             // Middle space
-            for(int space = 0; space < (2 * n) - (i * 2 + 2); space++) System.out.print(" ");
+            for (int space = 0; space < (2 * n) - (i * 2 + 2); space++) System.out.print(" ");
 
             // Right stars
-            for(int star = 0; star <= i; star++) System.out.print("*");
+            for (int star = 0; star <= i; star++) System.out.print("*");
             System.out.println();
         }
     }
@@ -472,17 +472,17 @@ public class Patterns {
          **********
          */
 
-        for(int i = 0; i < 2 * n; i++) {
+        for (int i = 0; i < 2 * n; i++) {
             int starCountInEachRow = i < n ? (n - i) : (i - n) + 1;
             // Left stars
-            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            for (int star = 0; star < starCountInEachRow; star++) System.out.print("*");
             int spaceCountInEachRow = (2 * n) - (starCountInEachRow * 2);
 
             // Middle space
-            for(int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
+            for (int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
 
             // Right stars
-            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            for (int star = 0; star < starCountInEachRow; star++) System.out.print("*");
             System.out.println();
         }
     }
@@ -499,17 +499,17 @@ public class Patterns {
          **      **
          *        *
          */
-        for(int i = 0; i < 2 * n - 1; i++) {
+        for (int i = 0; i < 2 * n - 1; i++) {
             int starCountInEachRow = i < n ? (i + 1) : (2 * n - i - 1);
             // Left stars
-            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            for (int star = 0; star < starCountInEachRow; star++) System.out.print("*");
             int spaceCountInEachRow = (2 * n) - (starCountInEachRow * 2);
 
             // Middle space
-            for(int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
+            for (int space = 0; space < spaceCountInEachRow; space++) System.out.print(" ");
 
             // Right stars
-            for(int star = 0; star < starCountInEachRow; star++) System.out.print("*");
+            for (int star = 0; star < starCountInEachRow; star++) System.out.print("*");
             System.out.println();
         }
     }
@@ -522,11 +522,11 @@ public class Patterns {
          *  *
          ****
          */
-        for(int i = 1; i < 2 * n; i++) {
-            if(i > 1 && i < 2 * n - 1) {
+        for (int i = 1; i < 2 * n; i++) {
+            if (i > 1 && i < 2 * n - 1) {
                 if (i % 2 != 0) {
                     System.out.print("*");
-                    for(int space = 0; space < n - 3; space++) {
+                    for (int space = 0; space < n - 3; space++) {
                         System.out.print(" ");
                     }
                     System.out.print("*");
@@ -534,7 +534,7 @@ public class Patterns {
                     continue;
                 }
             } else {
-                for(int stars = 0; stars < n - 1; stars++) {
+                for (int stars = 0; stars < n - 1; stars++) {
                     System.out.print("*");
                 }
             }
@@ -552,8 +552,8 @@ public class Patterns {
         11 12 13 14 15
          */
         int number = 1;
-        for(int i = 0; i < n; i++) {
-            for(int j = 0; j <= i; j++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= i; j++) {
                 System.out.print(number + " ");
                 number++;
             }
@@ -569,9 +569,9 @@ public class Patterns {
         0 1 0 1
         1 0 1 0 1
          */
-        for(int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             int number = i % 2;
-            for(int j = 1; j <= i; j++) {
+            for (int j = 1; j <= i; j++) {
                 System.out.print(number + " ");
                 number = 1 - number;
             }
@@ -579,11 +579,157 @@ public class Patterns {
         }
     }
 
+    public static void firstHalfOfPatternTwentyFour(int n) {
+        /*
+         *        *
+         **      **
+         * *    * *
+         *  *  *  *
+         *   **   *
+         */
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");  // Left border star
+            if (i == 0) {
+                for (int space = 0; space < (2 * n) - 2; space++) System.out.print(" ");
+            } else {
+                // This loop is responsible for printing inner space
+                for (int space = 0; space < i - 1; space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                // This loop is responsible for second inner(middle) space
+                for (int space = 0; space < (2 * n) - (i * 2 + 2); space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                // This loop is responsible for printing inner space
+                for (int space = 0; space < i - 1; space++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("*");  // Right border star
+            System.out.println();
+        }
+
+    }
+
+    public static void secondHalfOfPatternTwentyFour(int n) {
+        /*
+         *   **   *
+         *  *  *  *
+         * *    * *
+         **      **
+         *        *
+         */
+        for (int i = 0; i < n; i++) {
+            System.out.print("*");  // Left border star
+            if (i == n - 1) {
+                for (int space = 0; space < (2 * i); space++) System.out.print(" ");
+            } else {
+                // This loop is responsible for printing left inner space
+                for (int space = 0; space < n - (i + 2); space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                // This loop is responsible for second inner(middle) space
+                for (int space = 0; space < (2 * i); space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                // This loop is responsible for printing right inner space
+                for (int space = 0; space < n - (i + 2); space++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("*");  // Right border star
+            System.out.println();
+        }
+
+    }
+
+    public static void patternTwentyFour(int n) {
+        /*
+         *        *
+         **      **
+         * *    * *
+         *  *  *  *
+         *   **   *
+         *   **   *
+         *  *  *  *
+         * *    * *
+         **      **
+         *        *
+         */
+
+        for (int i = 0; i < 2 * n; i++) {
+            System.out.print("*");  // Left border star
+            if (i == 0 || i == 2 * n - 1) {
+                for (int space = 0; space < (2 * n - 2); space++) System.out.print(" ");
+            } else {
+                int innerSpace = i < n ? (i - 1) : (2 * n) - (i + 2);
+                // This loop is responsible for printing left inner space
+                for (int space = 0; space < innerSpace; space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                int middleInnerSpace = i < n ? (2 * n) - (i * 2 + 2) : (i * 2) - (2 * n);
+                // This loop is responsible for second inner(middle) space
+                for (int space = 0; space < middleInnerSpace; space++) {
+                    System.out.print(" ");
+                }
+
+                System.out.print("*"); // inner star
+
+                // This loop is responsible for printing right inner space
+                for (int space = 0; space < innerSpace; space++) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.print("*");  // Right border star
+            System.out.println();
+        }
+    }
 
 
+    public static void patternTwentyFive(int n) {
+        /*
+             *****
+            *   *
+           *   *
+          *   *
+         *****
+         */
 
+        for (int i = 0; i < n; i++) {
+            // left outer space
+            for (int space = 0; space < n - (i + 1); space++) {
+                System.out.print(" ");
+            }
+            System.out.print("*"); // Left border space
+            boolean isFirstAndLastLine = i == 0 || i == n - 1;
+            for (int j = 0; j < n - 2; j++) {
+                System.out.print(isFirstAndLastLine ? "*" : " ");
+            }
+            System.out.print("*"); // Right border space
+            System.out.println();
+
+        }
+    }
+
+
+    // https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
     public static void main(String[] args) {
-        patternTwentyTwo(5);
+        patternTwentyFive(5);
     }
 
 
