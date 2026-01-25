@@ -127,10 +127,10 @@ public class Patterns {
 
     public static void patternEight(int n) {
         /*
-         *
-         ***
-         *****
-         *******
+             *
+            ***
+           *****
+          *******
          *********
          */
         for (int i = 0; i < n; i++) {
@@ -147,10 +147,10 @@ public class Patterns {
     public static void patternNine(int n) {
         /*
          *********
-         *******
-         *****
-         ***
-         *
+          *******
+           *****
+            ***
+             *
          */
         for (int i = 0; i < n; i++) {
             for (int space = 0; space <= i; space++) {
@@ -165,10 +165,10 @@ public class Patterns {
 
     public static void patternTen(int n) {
         /*
-         *
-         * *
-         * * *
-         * * * *
+             *
+            * *
+           * * *
+          * * * *
          * * * * *
          */
 
@@ -187,10 +187,10 @@ public class Patterns {
 
         /*
          * * * * *
-         * * * *
-         * * *
-         * *
-         *
+          * * * *
+           * * *
+            * *
+             *
          */
         for (int i = 0; i < n; i++) {
             for (int space = 0; space <= i; space++) {
@@ -211,10 +211,10 @@ public class Patterns {
 
     public static void patternThirteen(int n) {
         /*
-         *
-         * *
-         *   *
-         *     *
+             *
+            * *
+           *   *
+          *     *
          *********
          */
         for (int i = 0; i < n; i++) {
@@ -242,10 +242,10 @@ public class Patterns {
     public static void patternFourteen(int n) {
         /*
          *********
-         *     *
-         *   *
-         * *
-         *
+          *     *
+           *   *
+            * *
+             *
          */
         for (int i = 0; i < n; i++) {
             // for outer space
@@ -283,15 +283,15 @@ public class Patterns {
 
     public static void patternFifteen(int n) {
         /*
-         *
-         * *
-         *   *
-         *     *
+             *
+            * *
+           *   *
+          *     *
          *       *
-         *     *
-         *   *
-         * *
-         *
+          *     *
+           *   *
+            * *
+             *
          */
         int helper = n - 2;
         for (int i = 0; i < 2 * n - 1; i++) {
@@ -320,15 +320,15 @@ public class Patterns {
 
     public static void diamondPattern(int n) {
         /*
-         *
-         ***
-         *****
-         *******
+             *
+            ***
+           *****
+          *******
          *********
-         *******
-         *****
-         ***
-         *
+          *******
+           *****
+            ***
+             *
          */
         for (int i = 0; i < 2 * n - 1; i++) {
             int spaceCount = (i < n) ? (n - i - 1) : (i - n + 1);
@@ -336,7 +336,7 @@ public class Patterns {
                 System.out.print(" ");
             }
 
-            int starCount = (i < n) ? (2 * i + 1) : (2 * (2 * n - i - 2) + 1);
+            int starCount = (2 * n) - (spaceCount * 2 + 1);
             for (int star = 0; star < starCount; star++) {
                 System.out.print("*");
             }
@@ -726,10 +726,112 @@ public class Patterns {
         }
     }
 
+    public static void patternTwentySix(int n) {
+        /*
+        1 1 1 1 1 1
+        2 2 2 2 2
+        3 3 3 3
+        4 4 4
+        5 5
+        6
+         */
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n - i; j++) {
+                System.out.print(i + 1);
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternTwentySeven(int n) {
+        /*
+        1 2 3 4  17 18 19 20
+          5 6 7  14 15 16
+            8 9  12 13
+              10 11
+         */
+
+    }
+
+    public static void patternTwentyEight(int n) {
+        /*
+              *
+             * *
+            * * *
+           * * * *
+          * * * * *
+           * * * *
+            * * *
+             * *
+              *
+         */
+        for(int i = 0; i < 2 * n - 1; i++) {
+            int spaces = i < n ? (n - i - 1) : (i + 1 - n);
+            for(int sp = 0; sp < spaces; sp++) {
+                System.out.print(" ");
+            }
+            for(int stars = 0; stars < n - spaces; stars++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternTwentyNine(int n) {
+        /*
+         *        *
+         **      **
+         ***    ***
+         ****  ****
+         **********
+         ****  ****
+         ***    ***
+         **      **
+         *        *
+         */
+        for(int i = 0; i < 2 * n - 1; i++) {
+            int starsCountInEachRow = i < n ? i + 1 : (2 * n - i - 1);
+            for(int stars = 0; stars < starsCountInEachRow; stars++) {
+                System.out.print("*");
+            }
+            int spacesCount = (2 * n) - (2 * starsCountInEachRow);
+            for(int sp = 0; sp < spacesCount; sp++) {
+                System.out.print(" ");
+            }
+            for(int stars = 0; stars < starsCountInEachRow; stars++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternThirty(int n) {
+        /*
+               1
+             2 1 2
+           3 2 1 2 3
+         4 3 2 1 2 3 4
+       5 4 3 2 1 2 3 4 5
+         */
+        for(int i = 0; i < n; i++) {
+            int number = i + 1;
+            for(int spaces = 0; spaces < n - i - 1; spaces++) {
+                System.out.print(" ");
+            }
+            int countOfNumbersInEachRow = (2 * i + 1);
+            int breakPoint = countOfNumbersInEachRow / 2;
+            for(int num = 0; num < countOfNumbersInEachRow; num++) {
+                System.out.print(number);
+                if(num < breakPoint) number--;
+                else number++;
+            }
+            System.out.println();
+        }
+    }
 
     // https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
     public static void main(String[] args) {
-        patternTwentyFive(5);
+        patternThirty(5);
     }
 
 
