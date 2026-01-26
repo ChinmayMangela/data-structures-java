@@ -829,9 +829,95 @@ public class Patterns {
         }
     }
 
+    public static void patternThirtyTwo(int n) {
+        /*
+        E
+        D E
+        C D E
+        B C D E
+        A B C D E
+         */
+        for(int i = 0; i < n; i++) {
+            int start = 'A' + (n - i - 1);
+            for(int j = 0; j <= i; j++) {
+                System.out.print((char) start);
+                start++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternThirtyThree(int n) {
+        /*
+        a
+        B c
+        D e F
+        g H i J
+        k L m N o
+         */
+
+        int asciiNumber = 'A';
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j <= i; j++) {
+                if(asciiNumber % 2 == 0) {
+                    System.out.print((char) asciiNumber);
+                } else {
+                    System.out.print((char)(asciiNumber + 32));
+                }
+
+                asciiNumber++;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternThirtyFour(int n) {
+        /*
+        E D C B A
+        D C B A
+        C B A
+        B A
+        A
+         */
+
+        for(int i = 0; i < n; i++) {
+            int start = 'A' + (n - i - 1);
+            for(int j = 0; j < n - i; j++) {
+                System.out.print((char) start);
+                start--;
+            }
+            System.out.println();
+        }
+    }
+
+    public static void patternThirtyFive(int n) {
+        /*
+        1        1
+        12      21
+        123    321
+        1234  4321
+        1234554321
+         */
+        for(int i = 0; i < n; i++) {
+            for(int num = 0; num <= i; num++) {
+                System.out.print(num + 1);
+            }
+            int numberOfSpacesInEachRow = (2 * n) - (i * 2 + 2);
+            for(int spaces = 0; spaces < numberOfSpacesInEachRow; spaces++) {
+                System.out.print(" ");
+            }
+            int number = i + 1;
+            for(int num = 0; num <= i; num++) {
+                System.out.print(number);
+                number--;
+            }
+            System.out.println();
+        }
+    }
+
     // https://github.com/kunal-kushwaha/DSA-Bootcamp-Java/blob/main/assignments/09-patterns.md
     public static void main(String[] args) {
-        patternThirty(5);
+        patternThirtyFive(5);
     }
 
 
